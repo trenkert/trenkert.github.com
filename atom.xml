@@ -6,7 +6,7 @@ layout: nil
  
  <title>James Hunt</title>
  <link href="http://ohthatjames.github.com/atom.xml" rel="self"/>
- <link href="http://ohthatjames.github.com.com/"/>
+ <link href="http://ohthatjames.github.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://ohthatjames.github.com/</id>
  <author>
