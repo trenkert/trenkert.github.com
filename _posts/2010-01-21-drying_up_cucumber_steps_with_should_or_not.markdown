@@ -51,7 +51,7 @@ end
 
 #step definition
 Then /^I (should|should not) see the edit button$/ do |should_or_not|
-  response.send should_or_not have_tag('input[type=submit][value=Edit]')
+  response.send should_or_not, have_tag('input[type=submit][value=Edit]')
 end
 
 {% endhighlight %}
@@ -66,7 +66,7 @@ Transform /^(should|should not)$/ do |should_or_not|
 end
 
 Then /^I (should|should not) see the edit button$/ do |should_or_not|
-  response.send should_or_not have_tag('input[type=submit][value=Edit]')
+  response.send should_or_not, have_tag('input[type=submit][value=Edit]')
 end
 {% endhighlight %}
 
