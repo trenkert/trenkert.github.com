@@ -44,7 +44,8 @@ path { files/are/here } # => "files/are/here"
 We inherit from [BlankSlate](http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc) to avoid any clashes with methods that already exist on object. All methods are converted into Strings, and then we can use the Merb String method. Now, how about names that start with capitals?
 
 {% highlight ruby %}
-path { Users/ohthatjames/Documents } # => uninitialized constant Users
+path { Users/ohthatjames/Documents } 
+# => uninitialized constant Users
 {% endhighlight %}
 
 OK, now we have to capture <code>const_missing</code>s as well. How about this?
@@ -55,7 +56,8 @@ class PathConverter
     const.to_s
   end
 end
-path { Users/ohthatjames/Documents } # => uninitialized constant Users
+path { Users/ohthatjames/Documents } 
+# => uninitialized constant Users
 {% endhighlight %}
 
 Hmmm. We're in the context of <code>PathConverter</code>, why doesn't this work? After a bit of googling, there's an [explanation](http://www.ruby-forum.com/topic/101701):
@@ -84,7 +86,8 @@ def path(&block)
   result
 end
 
-path { Users/ohthatjames/Documents } # => "Users/ohthatjames/Documents"
+path { Users/ohthatjames/Documents } 
+# => "Users/ohthatjames/Documents"
 
 {% endhighlight %}
 
@@ -93,13 +96,15 @@ So we set and unset <code>$convert_to_strings</code> around the <code>instance_e
 How about absolute paths?
 
 {% highlight ruby %}
-path { /Users/ohthatjames/Documents } # => unknown regexp options - hthatja
+path { /Users/ohthatjames/Documents } 
+# => unknown regexp options - hthatja
 {% endhighlight %}
 
 The Ruby parser seems to interpret this as a regular expression. Can we use this to our advantage? 
 
 {% highlight ruby %}
-path { ///Users/ohthatjames/Documents } # => NoMethodError: undefined method `/' for //:Regexp
+path { ///Users/ohthatjames/Documents } 
+# => NoMethodError: undefined method `/' for //:Regexp
 {% endhighlight %}
 
 This is valid Ruby, we just need a / method for <code>Regexp</code>:
@@ -111,7 +116,8 @@ class Regexp
   end
 end
 
-path { ///Users/ohthatjames/Documents } # => "/Users/ohthatjames/Documents"
+path { ///Users/ohthatjames/Documents } 
+# => "/Users/ohthatjames/Documents"
 {% endhighlight %}
 
 This works, but there are still some things I can't find solutions for: we can't use a Ruby keyword or a filename with spaces. We would still have to put quotes around them. 

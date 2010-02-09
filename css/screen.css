@@ -70,7 +70,7 @@ blockquote {
 div.site {
    font-size: 150%;
    text-align: justify;
-   width: 65em;
+   width: 40em;
    margin: 3em auto;
    line-height: 1.5em;
 }
@@ -149,4 +149,8 @@ div.site {
 
 .file .text {
   padding: 0.7em;
+}
+
+.highlight {
+  overflow: auto;
 }
