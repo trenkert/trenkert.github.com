@@ -154,3 +154,14 @@ div.site {
 .highlight {
   overflow: auto;
 }
+
+/* Post */
+.post ul {
+  margin: 10px 0px 30px 15px;
+}
+
+.post li {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 50px;
+}
