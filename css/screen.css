@@ -27,10 +27,6 @@ body {
   *font-size: small;
   text-align: center;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
  
 h1 {
   margin-bottom: 1em;
@@ -80,7 +76,7 @@ div.site {
    clear: both;
 }
 .header .title {
-   font-size: 150%;
+   font-size: 200%;
    font-weight: bold;
    margin-bottom: 0.7em;
    float: left;
@@ -164,4 +160,36 @@ div.site {
   margin-bottom: 5px;
   padding-left: 10px;
   padding-right: 50px;
+}
+
+/* CV */
+#cv div {
+	border-top: 1px dashed gray;
+	margin-top: 20px;
+	padding-top: 10px;
+}
+
+#cv h2 {
+  margin-bottom: 20px;
+}
+
+#cv h3 {
+  margin-top: 20px;
+}
+
+#cv h4 {
+  font-weight: normal;
+  font-style: italic;
+}
+
+#cv ul {
+  padding-left: 20px;
+}
+
+#cv li {
+  margin-bottom: 10px;
+}
+
+#cv .key-skills li {
+  margin-bottom: 0px;
 }
