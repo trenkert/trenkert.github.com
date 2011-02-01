@@ -8,49 +8,23 @@
    <meta name="author" content="James Hunt" />
 
    <link href="http://ohthatjames.github.com/atom.xml" rel="alternate" title="James Hunt" type="application/atom+xml" />   
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/fruity.css" type="text/css" />
  
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
+   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print">
+   <!--[if lt IE 8]>
+     <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+   <![endif]-->
+   
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
 </head>
 <body>
-
-
-  <div class="site">
-
-    <div class="header clearfix">
-
-      <div class="title">
-        <a href="/">James Hunt</a>
-      </div>
-
-      <ul class="menu">
-        <li><a href="/">home</a></li>
-      </ul>
-
-    </div>
-
+  <div class="container">
+    <h1>
+      <a href="/">James Hunt</a>
+    </h1>
+    <p class="strapline">Words about stuff. And things.</p>
+    
     {{ content }}
-
-    <div class="footer clearfix">
-
-      <div class="contact">
-        <div>ohthatjames @ gmail.com</div>
-        <div><a href="http://twitter.com/ohthatjames">twitter.com/ohthatjames</a></div>
-        <div><a href="http://github.com/ohthatjames">github.com/ohthatjames</a></div>
-        <div class="acknowledgement">
-          Thanks to <a href="http://tooky.github.com/2008/12/18/github-pages-and-jekyll.html">Tooky</a> for the theme.
-        </div>
-      </div>
-      
-      
-
-      <div class="rss">
-        <a href="http://ohthatjames.github.com/atom.xml"><img src="/images/feed-icon-96x96.png" title="feed" /></a>
-      </div>
-    </div>
   </div>
 
 <script type="text/javascript">

@@ -2,19 +2,40 @@
 layout: default
 title: James Hunt
 ---
-<div id="home">
-  <div id="current" class="post">
-    <div id="post" class="post">
-      <h1><a href="{{ site.posts.first.url }}">{{ site.posts.first.title }}</a></h1>
-      {{ site.posts.first.content  }}
+{% assign first_post = site.posts.first %}
+<div>
+  <h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
+  
+  <div class="post-info span-3 colborder">
+    <div>{{ first_post.date | date: "%d %B %Y" }}</div>
+    <div><a href="#disqus_thread">Comments</a></div>
+  </div>
+  
+  <div class="span-16 post">
+    <div class="post-content">
+      {{ first_post.content }}
+    </div>
+
+    <div class="related-posts">
+      <h2>Older Posts</h2>
+      <ul>
+        {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
-  <div class="archive">
-    <h1>Older Posts</h1>
-    <ul class="posts">
-      {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
+    
+  <div class="span-3 colborder-left last">
+    <!-- <img src="http://www.gravatar.com/avatar/bff5752d70c053adecf8d525c8266722.png?s=120"/> -->
+    <p>
+      Hi, I'm James Hunt. 
+      I'm a software developer in the UK. 
+      I <a href="http://github.com/ohthatjames">write code</a> and 
+      <a href="http://twitter.com/ohthatjames">occasionally tweet</a>.
+      You can get in touch at ohthatjames @ gmail.com.
+    </p>
+    <a href="http://ohthatjames.github.com/atom.xml"><img src="/images/feed-icon-14x14.png" title="feed" /></a>
   </div>
 </div>
+
