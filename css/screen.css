@@ -35,6 +35,7 @@ h1 a:hover, h2 a:hover {
 
 .post-content {
   font-size: 1.3em;
+  text-align: justify;
 }
 
 .post-info {
