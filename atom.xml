@@ -4,14 +4,14 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>James Hunt</title>
- <link href="http://ohthatjames.github.com/atom.xml" rel="self"/>
- <link href="http://ohthatjames.github.com/"/>
+ <title>Thomas Renkert</title>
+ <link href="http://trenkert.github.com/atom.xml" rel="self"/>
+ <link href="http://trenkert.github.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://ohthatjames.github.com/</id>
+ <id>http://trenkert.github.com/</id>
  <author>
-   <name>James Hunt</name>
-   <email>ohthatjames@gmail.com</email>
+   <name>Thomas Renkert</name>
+   <email></email>
  </author>
  
  {% for post in site.posts %}
@@ -20,9 +20,9 @@ layout: nil
    {% for category in post.categories %}
    <category term="{{category}}" />
    {% endfor %}
-   <link href="http://ohthatjames.github.com{{ post.url }}"/>
+   <link href="http://trenkert.github.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://ohthatjames.github.com{{ post.id }}</id>
+   <id>http://trenkert.github.com{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
