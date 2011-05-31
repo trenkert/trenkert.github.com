@@ -20,27 +20,43 @@
 <body>
   <div class="container">
     <h1>
-      <a href="/">Thomas Renkert</a>
+      <a href="/">Epilegomena</a>
     </h1>
     <p class="strapline">Test</p>
     
-    {{ content }}
   </div>
 
-<script type="text/javascript">
-//<![CDATA[
-(function() {
-  var links = document.getElementsByTagName('a');
-  var query = '?';
-  for(var i = 0; i < links.length; i++) {
-  if(links[i].href.indexOf('#disqus_thread') >= 0) {
-    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-  }
-  }
-  document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/ohthatjames/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
-</script>
+<div class="site">
+  <div class="title">
+    <a href="/">Thomas Renkert</a>
+    <a class="extra" href="/">home</a>
+    <a class="extra" href="/#about">about</a>
+<!--    <a class="extra" href="/#blog">blog</a>
+    <a class="extra" href="/#projects">projects</a>
+    <a class="extra" href="/#talks">talks & papers</a>
+    <a class="extra" href="/#other">other</a>
+-->
+  </div>
+
+  {{ content }}
+
+ <div class="footer">
+    <div class="contact">
+      <p>
+        Thomas Renkert<br />
+        test@test.com<br />
+        <a href="http://test.com/atom.xml">ATOM feed</a>
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/trenkert/">trenkert@GitHub</a><br />
+        <a href="http://identica.com/trenkert/">trenkert@Twitter</a><br />
+      </p>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
